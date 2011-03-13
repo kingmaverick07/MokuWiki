@@ -1,0 +1,41 @@
+body {
+	font-size: 80%;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+#header {
+	border-bottom: 3px solid #999;
+}
+
+#header h1 {
+	margin: 5px 0px 5px 10px;
+}
+
+#main {
+	margin: 0 10px;
+}
+
+#page_title {
+	margin-bottom: 5px;
+}
+
+#edit {
+	margin-top: 10px;
+	border-top: 2px #ccc solid;
+	padding: 4px;
+}
+
+/* Resizeable Textarea*/ 
+textarea.resizable {
+	display: block;
+	width:100%;
+}
+div.grippie {
+   background:#EEEEEE url(grippie.png) no-repeat scroll center 2px;
+   border-color:#DDDDDD;
+   border-style:solid;
+   border-width:0pt 1px 1px;
+   cursor:s-resize;
+   height:9px;
+   overflow:hidden;
+}
