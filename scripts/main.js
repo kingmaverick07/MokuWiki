@@ -33,12 +33,17 @@ function savePage(page_title, content) {
 /* jQuery textarea resizer plugin usage */
   $(document).ready(function() {  	
     $('textarea.resizable:not(.processed)').TextAreaResizer();
-	var page_text = openPage("loremipsum");
+	var page_title = 'Home';
+	if ($.getURLParam("page") != null) {
+		var page_title = $.getURLParam("page");
+	} 
+	var page_text = openPage(page_title);
+    $('#page_title').html(page_title);
     $('#page_content').html(page_text);
     $('#page_content_edit').html(page_text);
 	$('#page_content_edit_save').click(function(event) {
 		event.preventDefault();
-		var r = savePage("loremipsum", $('#page_content_edit').val());
+		var r = savePage(page_title, $('#page_content_edit').val());
 		if (r) {
 			alert("Page saved!");
 			 $('#page_content').html( $('#page_content_edit').val());
