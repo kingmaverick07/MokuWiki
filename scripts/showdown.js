@@ -530,7 +530,10 @@ var writeAnchorTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 				return whole_match;
 			}
 		}
-	}	
+	} else if (url.search(/^\[([^\[\]]+)\]$/) != -1) { // Wiki page navigation
+		url = url.match(/^\[([^\[\]]+)\]$/)[1];
+		url = document.location.href + "?page=" + url;
+	}
 	
 	url = escapeCharacters(url,"*_");
 	var result = "<a href=\"" + url + "\"";
