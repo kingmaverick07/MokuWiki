@@ -38,15 +38,19 @@ function savePage(page_title, content) {
 		var page_title = $.getURLParam("page");
 	} 
 	var page_text = openPage(page_title);
+	var converter = new Showdown.converter();
+    var page_html = converter.makeHtml(page_text);
     $('#page_title').html(page_title);
-    $('#page_content').html(page_text);
+    $('#page_content').html(page_html);
     $('#page_content_edit').html(page_text);
 	$('#page_content_edit_save').click(function(event) {
 		event.preventDefault();
 		var r = savePage(page_title, $('#page_content_edit').val());
 		if (r) {
-			alert("Page saved!");
-			 $('#page_content').html( $('#page_content_edit').val());
+			//alert("Page saved!");
+			var converter = new Showdown.converter();
+			var page_html = converter.makeHtml($('#page_content_edit').val());
+			 $('#page_content').html( page_html );
 		} else {
 			alert("Error while saving");
 		}
