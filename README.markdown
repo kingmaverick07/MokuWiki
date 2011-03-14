@@ -8,5 +8,14 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
 * Javascript + HTML + CSS
 * Pages are stored in files. One page, one file.
   * You should be able to edit those files without opening the wiki, but do the editing in your favorite text editor
-* $imagination
+* Markup-Language: Markdown
+  * Still needs some extensions to be able to easily link to Wiki pages
+* `$imagination`
  
+## Libraries used
+* jQuery v1.5.1 ([Homepage](http://jquery.com/))<br />
+    Plugins:
+  * getUrlParam ([Homepage](http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/))
+  * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
+* Showdown ([Original Homepage](http://www.attacklab.net/) (currently offline))
+* TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
