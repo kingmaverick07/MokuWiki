@@ -1,34 +1,46 @@
-function openPage(page_title) {	
-	var tiddlyIO = new TiddlyIO();
-	var localPath = tiddlyIO.localPath;
-	var pagePath;
+/* BEGIN Page class */
+/**
+    Creates a new JSwiki Page.
+    @class Represents a JSwiki page. 
+ */ 
+function Page(title) {
+	this.title = title;
+	this.tiddlyIO = new TiddlyIO();
+	this.converter = new Showdown.converter();
+	this.text = '';
+	
+	var localPath = this.tiddlyIO.localPath;
 	if((p = localPath.lastIndexOf("/")) != -1)
-		pagePath = localPath.substr(0,p) + "/";
+		this.path = localPath.substr(0,p) + "/";
 	else if((p = localPath.lastIndexOf("\\")) != -1)
-		pagePath = localPath.substr(0,p) + "\\";
+		this.path = localPath.substr(0,p) + "\\";
 	else
-		pagePath = localPath + ".";
-	pagePath += "data\\" + page_title + ".txt";
-	var output = tiddlyIO.loadFile(pagePath);
+		this.path = localPath + ".";
+	this.path += "data\\" + this.title + ".txt";
+}
+
+/* page.load(): Load the page from the file system */
+Page.prototype.load = function () {
+	this.text = this.tiddlyIO.loadFile(this.path);
+}
+
+/* page.save(): Save the page to the file system */
+Page.prototype.save = function () {
+	var output = this.tiddlyIO.saveFile(this.path, this.text);
 	return output;
 }
 
-function savePage(page_title, content) {
-	var tiddlyIO = new TiddlyIO();
-	var localPath = tiddlyIO.localPath;
-	var pagePath;
-	if((p = localPath.lastIndexOf("/")) != -1)
-		pagePath = localPath.substr(0,p) + "/";
-	else if((p = localPath.lastIndexOf("\\")) != -1)
-		pagePath = localPath.substr(0,p) + "\\";
-	else
-		pagePath = localPath + ".";
-	pagePath += "data\\" + page_title + ".txt";
-	var output = tiddlyIO.saveFile(pagePath, content);
+/* page.getHTML(): Runs Markdown interpreter over the page content and returns the resulting HTML */
+Page.prototype.getHTML = function () {
+	var output;
+	if (this.text != null) {
+		output = this.converter.makeHtml(this.text);
+	} else {
+		output = "Error: Page is empty!<br/>Maybe you didn't create it yet?";
+	}
 	return output;
 }
-
-
+/* END Page class */
 
 /* jQuery textarea resizer plugin usage */
   $(document).ready(function() {  	
@@ -36,21 +48,19 @@ function savePage(page_title, content) {
 	var page_title = 'Home';
 	if ($.getURLParam("page") != null) {
 		var page_title = $.getURLParam("page");
-	} 
-	var page_text = openPage(page_title);
-	var converter = new Showdown.converter();
-    var page_html = converter.makeHtml(page_text);
-    $('#page_title').html(page_title);
-    $('#page_content').html(page_html);
-    $('#page_content_edit').html(page_text);
+	}
+	var page = new Page(page_title);
+	page.load();
+    $('#page_title').html(page.title);
+    $('#page_content').html(page.getHTML());
+    $('#page_content_edit').html(page.text);
+	
 	$('#page_content_edit_save').click(function(event) {
 		event.preventDefault();
-		var r = savePage(page_title, $('#page_content_edit').val());
+		page.text = $('#page_content_edit').val();
+		var r = page.save();
 		if (r) {
-			//alert("Page saved!");
-			var converter = new Showdown.converter();
-			var page_html = converter.makeHtml($('#page_content_edit').val());
-			 $('#page_content').html( page_html );
+			 $('#page_content').html(page.getHTML());
 		} else {
 			alert("Error while saving");
 		}

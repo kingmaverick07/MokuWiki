@@ -10,6 +10,7 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
   * You should be able to edit those files without opening the wiki, but do the editing in your favorite text editor
 * Markup-Language: Markdown
   * Still needs some extensions to be able to easily link to Wiki pages
+* So far, only Firefox is supported. TiddlyIO should work on other browsers as well, but some other coding doesn't (yet)
 * `$imagination`
  
 ## Libraries used
