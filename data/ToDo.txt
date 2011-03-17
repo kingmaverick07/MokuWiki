@@ -1,13 +1,12 @@
 # ToDo
-
-## Fixes
-* Loading Icon instead of error message when opening the wiki
+Features and other stuff that needs to be worked on in JSwiki.
 
 ## Design
 * Don't show editor all the time
 * Footer
-* Format headers (`<h1>` - `<h6>`) in wikipage so they fit the overall layout
 * Format lists
+* Themes? 
+  * [mustache](http://mustache.github.com/)
 
 ## Features
 * Preview

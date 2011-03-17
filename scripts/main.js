@@ -3,8 +3,10 @@
     Creates a new JSwiki Page.
     @class Represents a JSwiki page. 
  */ 
-function Page(title) {
-	this.title = title;
+function Page(name) {
+	this.name = name
+	this.title = name;
+	this.hasOwnTitle = false;
 	this.tiddlyIO = new TiddlyIO();
 	this.converter = new Showdown.converter();
 	this.text = '';
@@ -16,12 +18,12 @@ function Page(title) {
 		this.path = localPath.substr(0,p) + "\\";
 	else
 		this.path = localPath + ".";
-	this.path += "data\\" + this.title + ".txt";
+	this.path += "data\\" + this.name + ".txt";
 }
 
 /* page.load(): Load the page from the file system */
 Page.prototype.load = function () {
-	this.text = this.tiddlyIO.loadFile(this.path);
+	this.setText( this.tiddlyIO.loadFile(this.path) );
 }
 
 /* page.save(): Save the page to the file system */
@@ -34,11 +36,26 @@ Page.prototype.save = function () {
 Page.prototype.getHTML = function () {
 	var output;
 	if (this.text != null) {
-		output = this.converter.makeHtml(this.text);
+		var text = this.text.replace(/^#[^#\n]+/, ""); //Remove first headline from text
+		output = this.converter.makeHtml(text);
 	} else {
 		output = "Error: Page is empty!<br/>Maybe you didn't create it yet?";
 	}
 	return output;
+}
+
+/* page.setText(text): Set Text and update page title */
+Page.prototype.setText = function (text) {
+	this.text = text;
+	var headlinePattern = /^#([^#\n]+)/;
+	var match = headlinePattern.exec(this.text);
+	if (match === null) {
+		this.title = this.name
+		this.hasOwnTitle = false;
+	} else {
+		this.title = match[1];
+		this.hasOwnTitle = true;
+	}
 }
 /* END Page class */
 
@@ -57,10 +74,11 @@ Page.prototype.getHTML = function () {
 	
 	$('#page_content_edit_save').click(function(event) {
 		event.preventDefault();
-		page.text = $('#page_content_edit').val();
+		page.setText( $('#page_content_edit').val() );
 		var r = page.save();
 		if (r) {
 			 $('#page_content').html(page.getHTML());
+			 $('#page_title').html(page.title);
 		} else {
 			alert("Error while saving");
 		}
