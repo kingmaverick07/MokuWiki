@@ -532,7 +532,9 @@ var writeAnchorTag = function(wholeMatch,m1,m2,m3,m4,m5,m6,m7) {
 		}
 	} else if (url.search(/^\[([^\[\]]+)\]$/) != -1) { // Wiki page navigation
 		url = url.match(/^\[([^\[\]]+)\]$/)[1];
-		url = document.location.href + "?page=" + url;
+		var docLocation = document.location.toString();
+		docLocation = docLocation.substring(0, docLocation.indexOf("?"));
+		url = docLocation + "?page=" + url;
 	}
 	
 	url = escapeCharacters(url,"*_");

@@ -1,3 +1,8 @@
+/* Configuration */
+var config = {
+	name: "JSwiki"
+}
+
 /* BEGIN Page class */
 /**
     Creates a new JSwiki Page.
@@ -62,6 +67,7 @@ Page.prototype.setText = function (text) {
 /* jQuery textarea resizer plugin usage */
   $(document).ready(function() {  	
     $('textarea.resizable:not(.processed)').TextAreaResizer();
+	$('#wiki_name').html(config.name);
 	var page_title = 'Home';
 	if ($.getURLParam("page") != null) {
 		var page_title = $.getURLParam("page");
@@ -71,6 +77,7 @@ Page.prototype.setText = function (text) {
     $('#page_title').html(page.title);
     $('#page_content').html(page.getHTML());
     $('#page_content_edit').html(page.text);
+	document.title = config.name + " - " + page.title;
 	
 	$('#page_content_edit_save').click(function(event) {
 		event.preventDefault();
@@ -79,6 +86,7 @@ Page.prototype.setText = function (text) {
 		if (r) {
 			 $('#page_content').html(page.getHTML());
 			 $('#page_title').html(page.title);
+			 document.title = config.name + " - " + page.title;
 		} else {
 			alert("Error while saving");
 		}
