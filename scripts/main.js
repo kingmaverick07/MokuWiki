@@ -1,8 +1,16 @@
-/* Configuration */
+/*
+*  JSwiki
+*
+*	 Copyright (c) 2011 Severin Schols
+*    Licensed under the MIT license. See LICENSE.markdown for details.
+*/
+
+/* BEGIN Configuration */
 var config = {
 	name: "JSwiki",
   default_page: "home"
 }
+/* END Configuration */
 
 /* BEGIN Page class */
 /**
@@ -65,21 +73,30 @@ Page.prototype.setText = function (text) {
 }
 /* END Page class */
 
-/* jQuery textarea resizer plugin usage */
-  $(document).ready(function() {  	
+  $(document).ready(function() { 
+    // jQuery textarea resizer plugin usage
     $('textarea.resizable:not(.processed)').TextAreaResizer();
-	  $('#wiki_name').html(config.name);
+	  
+     // Set wiki name
+    $('#wiki_name').html(config.name);
+
+    // Determine page title
 	  var page_title = config.default_page;
 	  if ($.getURLParam("page") != null) {
 		  page_title = $.getURLParam("page");
 	  }
+
+    // Load given page from file
 	  var page = new Page(page_title);
 	  page.load();
+
+    // Insert page contents into site
     $('#page_title').html(page.title);
     $('#page_content').html(page.getHTML());
     $('#page_content_edit').html(page.text);
 	  document.title = config.name + " - " + page.title;
-	
+
+    // Save page
 	  $('#page_content_edit_save').click(function(event) {
 		  event.preventDefault();
 		  page.setText( $('#page_content_edit').val() );

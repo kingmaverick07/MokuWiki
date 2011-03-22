@@ -11,7 +11,7 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
 * Markup-Language: Markdown
 * So far, only Firefox-support has been tested
 * `$imagination`
- 
+
 ## Libraries used
 * jQuery v1.5.1 ([Homepage](http://jquery.com/))<br />
     Plugins:
@@ -19,3 +19,6 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
   * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
 * Showdown ([Original Homepage](http://www.attacklab.net/) (currently offline))
 * TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
+
+## License
+JSwiki is released under the MIT license. See LICENSE.markdown for details.
