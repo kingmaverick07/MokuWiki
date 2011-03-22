@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<title>JSwiki</title>
-<link href="style/screen.css" rel="stylesheet" type="text/css" media="screen"/>
-<script type="text/javascript" src="scripts/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/jquery.textarearesizer.compressed.js"></script>
-<script type="text/javascript" src="scripts/jquery.getParams.js"></script>
-<script type="text/javascript" src="scripts/tiddlyio.js"></script>
-<script type="text/javascript" src="scripts/showdown.js"></script>
-<script type="text/javascript" src="scripts/main.js"></script>
-</head>
-<body>
-<div id="header"><h1><a href="?page=home" id="wiki_name">JSwiki</a></h1></div>
-<div id="main">
-<h1 id="page_title">[Loading...]</h2>
-<div id="page_content">
-<img src="img/loader.gif" />
-</div>
-<div id="edit">
-<form>
-<textarea rows="20" class="resizable" id="page_content_edit"></textarea><input type="submit" value="Save" id="page_content_edit_save">
-</form>
-</div>
-</div>
-</body>
+  <head>
+    <title>JSwiki</title>
+    <link href="style/screen.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.textarearesizer.compressed.js"></script>
+    <script type="text/javascript" src="scripts/jquery.getParams.js"></script>
+    <script type="text/javascript" src="scripts/tiddlyio.js"></script>
+    <script type="text/javascript" src="scripts/showdown.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <h1><a href="?page=home" id="wiki_name">JSwiki</a></h1>
+    </div>
+    <div id="main">
+      <h1 id="page_title">[Loading...]</h2>
+      <div id="page_content">
+        <img src="img/loader.gif" />
+      </div>
+      <div id="edit">
+        <form>
+          <textarea rows="20" class="resizable" id="page_content_edit"></textarea><input type="submit" value="Save" id="page_content_edit_save">
+        </form>
+      </div>
+    </div>
+    <div id="footer">
+      Powered by <a href="http://github.com/tiefpunkt/jswiki" target="_blank">JSwiki</a>.
+    </div>
+  </body>
 </html>

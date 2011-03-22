@@ -1,20 +1,17 @@
 # ToDo
 Features and other stuff that needs to be worked on in JSwiki.
 
-## Design
+## Shortterm
 * Don't show editor all the time
-* Footer
 * Format lists
-* Themes? 
-  * [mustache](http://mustache.github.com/)
-
-## Features
+* Fix styling of code segments
 * Preview
-* Read pages without TiddlyIO
-* Demopage showcasing markdown syntax
 
 ## Longterm
 * History
 * Search
 * List of all pages
 * Categories
+* Themes? 
+  * [mustache](http://mustache.github.com/)
+* Read pages without TiddlyIO

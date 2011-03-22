@@ -1,6 +1,7 @@
 /* Configuration */
 var config = {
-	name: "JSwiki"
+	name: "JSwiki",
+  default_page: "home"
 }
 
 /* BEGIN Page class */
@@ -67,29 +68,29 @@ Page.prototype.setText = function (text) {
 /* jQuery textarea resizer plugin usage */
   $(document).ready(function() {  	
     $('textarea.resizable:not(.processed)').TextAreaResizer();
-	$('#wiki_name').html(config.name);
-	var page_title = 'Home';
-	if ($.getURLParam("page") != null) {
-		var page_title = $.getURLParam("page");
-	}
-	var page = new Page(page_title);
-	page.load();
+	  $('#wiki_name').html(config.name);
+	  var page_title = config.default_page;
+	  if ($.getURLParam("page") != null) {
+		  page_title = $.getURLParam("page");
+	  }
+	  var page = new Page(page_title);
+	  page.load();
     $('#page_title').html(page.title);
     $('#page_content').html(page.getHTML());
     $('#page_content_edit').html(page.text);
-	document.title = config.name + " - " + page.title;
+	  document.title = config.name + " - " + page.title;
 	
-	$('#page_content_edit_save').click(function(event) {
-		event.preventDefault();
-		page.setText( $('#page_content_edit').val() );
-		var r = page.save();
-		if (r) {
-			 $('#page_content').html(page.getHTML());
-			 $('#page_title').html(page.title);
-			 document.title = config.name + " - " + page.title;
-		} else {
-			alert("Error while saving");
-		}
+	  $('#page_content_edit_save').click(function(event) {
+		  event.preventDefault();
+		  page.setText( $('#page_content_edit').val() );
+		  var r = page.save();
+		  if (r) {
+			  $('#page_content').html(page.getHTML());
+			  $('#page_title').html(page.title);
+			  document.title = config.name + " - " + page.title;
+		  } else {
+			  alert("Error while saving");
+		  }
 		
-	});
+	  });
   });

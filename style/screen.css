@@ -25,6 +25,7 @@ body {
 
 #main {
 	margin: 0 10px;
+  border-bottom: 2px solid #999;
 }
 
 #page_title {
@@ -37,6 +38,7 @@ body {
 	padding: 4px;
 }
 
+
 /* Resizeable Textarea*/ 
 textarea.resizable {
 	display: block;
@@ -48,8 +50,14 @@ div.grippie {
    border-style:solid;
    border-width:0pt 1px 1px;
    cursor:s-resize;
-   height:9px;
+   height:6px;
    overflow:hidden;
+}
+
+#footer {
+  width:100%;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 h1 {
