@@ -23,7 +23,7 @@ function Page(name) {
 		this.path = localPath.substr(0,p) + "\\";
 	else
 		this.path = localPath + ".";
-	this.path += "data\\" + this.name + ".txt";
+	this.path += "data" + this.tiddlyIO.separator + this.name + ".txt";
 }
 
 /* page.load(): Load the page from the file system */
