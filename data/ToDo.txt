@@ -1,5 +1,5 @@
 # ToDo
-Features and other stuff that needs to be worked on in JSwiki.
+Features and other stuff that needs to be worked on in MokuWiki.
 
 ## Shortterm
 * Format lists
@@ -7,9 +7,10 @@ Features and other stuff that needs to be worked on in JSwiki.
 * Preview
 
 ## Longterm
-* History
-* Search
 * List of all pages
+* Switch to [Creole](http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html] as wiki markup
+* Search
+* Revision History
 * Categories
 * Themes? 
   * [mustache](http://mustache.github.com/)

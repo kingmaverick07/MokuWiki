@@ -1,5 +1,5 @@
 /*
-*  JSwiki
+*  MokuWiki
 *
 *   Copyright (c) 2011 Severin Schols
 *    Licensed under the MIT license. See LICENSE.markdown for details.
@@ -7,15 +7,15 @@
 
 /* BEGIN Configuration */
 var config = {
-  name: "JSwiki",
+  name: "MokuWiki",
   default_page: "home"
 }
 /* END Configuration */
 
 /* BEGIN Page class */
 /**
-    Creates a new JSwiki Page.
-    @class Represents a JSwiki page. 
+    Creates a new MokuWiki Page.
+    @class Represents a MokuWiki page. 
  */ 
 function Page(name) {
   this.name = name

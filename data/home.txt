@@ -1,5 +1,5 @@
-# Welcome to JSwiki
-JSwiki is a wiki based on javascript and able to run without any kind of webserver, but just on your local machine.
+# Welcome to MokuWiki
+MokuWiki is a wiki based on javascript and able to run without any kind of webserver, but just on your local machine.
 
 ## Features
 * Javascript + HTML + CSS
@@ -21,4 +21,4 @@ JSwiki is a wiki based on javascript and able to run without any kind of webserv
 [License]([License]) | [ToDo]([ToDo])
 
 ## Links
-* [GitHub Repository](https://github.com/tiefpunkt/jswiki)
+* [GitHub Repository](https://github.com/tiefpunkt/mokuwiki)

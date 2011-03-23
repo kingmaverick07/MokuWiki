@@ -1,5 +1,5 @@
-# JSwiki Licensing
-JSwiki is licensed under the MIT license
+# MokuWiki Licensing
+MokuWiki is licensed under the MIT license
 
 > Copyright (c) 2011 Severin Schols
 > 
@@ -22,7 +22,7 @@ JSwiki is licensed under the MIT license
 > THE SOFTWARE.
 
 ## Parts take from other projects
-JSwiki uses parts of the following libraries/projects. See their sites for license information
+MokuWiki uses parts of the following libraries/projects. See their sites for license information
 
 * jQuery v1.5.1 ([Homepage](http://jquery.com/))<br />
   Plugins:

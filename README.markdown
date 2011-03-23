@@ -1,5 +1,5 @@
-# JSwiki
-JSwiki is a wiki based on javascript and able to run without any kind of webserver, but just on your local machine.
+# MokuWiki
+MokuWiki is a wiki based on javascript and able to run without any kind of webserver, but just on your local machine.
 
 ## Comparison to TiddlyWiki
 You might think: "Hey, there is such a thing already. It's called TiddlyWiki". Well, yes, and I'm not a great fan of it. It's got all this animation stuff, and tries to do all on one page, in one file. And while I'm sure there's some amazing use-cases for that and there are people who can't live without it, I want something different.
@@ -21,4 +21,4 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
 * TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
 
 ## License
-JSwiki is released under the MIT license. See LICENSE.markdown for details.
+MokuWiki is released under the MIT license. See LICENSE.markdown for details.
