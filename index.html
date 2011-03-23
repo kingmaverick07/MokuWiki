@@ -27,9 +27,15 @@
         <img src="img/loader.gif" />
       </div>
       <div id="edit">
-        <form>
-          <textarea rows="20" class="resizable" id="page_content_edit"></textarea><input type="submit" value="Save" id="page_content_edit_save">
-        </form>
+		<div id="page_content_edit_bar">
+		  <input type="button" value="Edit Page" id="page_content_edit_start">
+		</div>
+		<div id="page_content_editor">
+          <form>
+            <textarea rows="20" class="resizable" id="page_content_edit"></textarea>
+		    <input type="submit" value="Save" id="page_content_edit_save"><input type="button" value="Cancel Editing" id="page_content_edit_cancel">
+          </form>
+		</div>
       </div>
     </div>
     <div id="footer">

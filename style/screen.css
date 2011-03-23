@@ -38,6 +38,13 @@ body {
 	padding: 4px;
 }
 
+#edit #page_content_edit_bar {
+	text-align: right;
+}
+
+#edit #page_content_editor {
+	display: none;
+}
 
 /* Resizeable Textarea*/ 
 textarea.resizable {

@@ -2,7 +2,6 @@
 Features and other stuff that needs to be worked on in JSwiki.
 
 ## Shortterm
-* Don't show editor all the time
 * Format lists
 * Fix styling of code segments
 * Preview
