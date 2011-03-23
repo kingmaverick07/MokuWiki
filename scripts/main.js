@@ -60,7 +60,13 @@ Page.prototype.getHTML = function () {
 
 /* page.setText(text): Set Text and update page title */
 Page.prototype.setText = function (text) {
+  // Change Linebreaks to CRLF, for crosscompatibility
+  text = text.replace(/\r\n/gi, "\n");
+  text = text.replace(/\n/gi, "\r\n");
+  
   this.text = text;
+  
+  // Find page title
   var headlinePattern = /^#([^#\n]+)/;
   var match = headlinePattern.exec(this.text);
   if (match === null) {
@@ -99,7 +105,8 @@ Page.prototype.setText = function (text) {
     // Save page
     $('#page_content_edit_save').click(function(event) {
       event.preventDefault();
-      page.setText( $('#page_content_edit').val() );
+	  var text = $('#page_content_edit').val()
+      page.setText( text );
       var r = page.save();
       if (r) {
         $('#page_content').html(page.getHTML());
