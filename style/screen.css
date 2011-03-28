@@ -1,3 +1,10 @@
+/*
+*  MokuWiki v0.1
+*
+*   Copyright (c) 2011 Severin Schols
+*    Licensed under the MIT license. See LICENSE.markdown for details.
+*/
+
 body {
 	font-size: 80%;
 	font-family: verdana, arial, helvetica, sans-serif;
@@ -12,6 +19,13 @@ body {
 	font-size: 2.0em;
 	color: #666;
 	padding-right: 30px;
+}
+
+#header img {
+	z-index: -1;
+	position: absolute;
+	top: 5px;
+	right: 10px;
 }
 
 #header h1 a, #header h1 a:visited {
@@ -107,8 +121,7 @@ blockquote {
 }
 
 code {
-	font-size: 1.3em;
-	border: 1px dotted #666;
-	padding: 1px 4px;
+	font-family: Andale Mono, Courier New, monospace;
+	/*font-size: 1.1em;*/
 	background: #eee;
 }

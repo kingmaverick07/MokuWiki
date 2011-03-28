@@ -1,5 +1,5 @@
 /*
-*  MokuWiki
+*  MokuWiki v0.1
 *
 *   Copyright (c) 2011 Severin Schols
 *    Licensed under the MIT license. See LICENSE.markdown for details.
@@ -21,28 +21,52 @@ function Page(name) {
   this.name = name
   this.title = name;
   this.hasOwnTitle = false;
-  this.tiddlyIO = new TiddlyIO();
+  //this.tiddlyIO = new TiddlyIO();
   this.converter = new Showdown.converter();
   this.text = '';
   
+  this.path = "data/" + this.name + ".txt";
+}
+
+Page.prototype.buildLocalPath = function () {
   var localPath = this.tiddlyIO.localPath;
   if((p = localPath.lastIndexOf("/")) != -1)
-    this.path = localPath.substr(0,p) + "/";
+    this.localPath = localPath.substr(0,p) + "/";
   else if((p = localPath.lastIndexOf("\\")) != -1)
-    this.path = localPath.substr(0,p) + "\\";
+    this.localPath = localPath.substr(0,p) + "\\";
   else
-    this.path = localPath + ".";
-  this.path += "data" + this.tiddlyIO.separator + this.name + ".txt";
+    this.localPath = localPath + ".";
+  this.localPath += "data" + this.tiddlyIO.separator + this.name + ".txt";
 }
 
 /* page.load(): Load the page from the file system */
 Page.prototype.load = function () {
-  this.setText( this.tiddlyIO.loadFile(this.path) );
+  var obj = this;
+  
+  $.ajax({
+    url: this.path,
+	async: false,
+	dataType: "text",
+	success:  function (data) {
+        obj.setText( data );
+	  },
+	error:  function () {
+	    if (!obj.tiddlyIO) {
+		  obj.tiddlyIO = new TiddlyIO();
+		  obj.buildLocalPath();
+		}
+	    obj.setText( obj.tiddlyIO.loadFile(obj.localPath) );
+	  }
+	});
 }
 
 /* page.save(): Save the page to the file system */
 Page.prototype.save = function () {
-  var output = this.tiddlyIO.saveFile(this.path, this.text);
+  if (!this.tiddlyIO) {
+    this.tiddlyIO = new TiddlyIO();
+	this.buildLocalPath();
+  }
+  var output = this.tiddlyIO.saveFile(this.localPath, this.text);
   return output;
 }
 
@@ -60,6 +84,10 @@ Page.prototype.getHTML = function () {
 
 /* page.setText(text): Set Text and update page title */
 Page.prototype.setText = function (text) {
+  if (typeof text != "string") {
+    this.text = null;
+    return;
+  }	
   // Change Linebreaks to CRLF, for crosscompatibility
   text = text.replace(/\r\n/gi, "\n");
   text = text.replace(/\n/gi, "\r\n");

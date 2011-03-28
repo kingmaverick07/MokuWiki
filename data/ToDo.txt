@@ -3,15 +3,13 @@ Features and other stuff that needs to be worked on in MokuWiki.
 
 ## Shortterm
 * Format lists
-* Fix styling of code segments
 * Preview
 
 ## Longterm
 * List of all pages
-* Switch to [Creole](http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html] as wiki markup
+* Switch to [Creole](http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html) as wiki markup
 * Search
 * Revision History
 * Categories
 * Themes? 
   * [mustache](http://mustache.github.com/)
-* Read pages without TiddlyIO
