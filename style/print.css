@@ -1,0 +1,119 @@
+/*
+*  MokuWiki v0.1
+*
+*   Copyright (c) 2011 Severin Schols
+*    Licensed under the MIT license. See LICENSE.markdown for details.
+*/
+
+body {
+	font-size: 80%;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+#header {
+	border-bottom: 3px solid #999;
+}
+
+#header h1 {
+	margin: 5px 0px 5px 10px;
+	font-size: 2.0em;
+	color: #666;
+	padding-right: 30px;
+}
+
+#header img {
+	z-index: -1;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+#header h1 a, #header h1 a:visited {
+	color: #666;
+	text-decoration: none;
+}
+
+#header h1 a:hover {
+	color: #336;
+}
+
+#main {
+	margin: 0 10px;
+  border-bottom: 2px solid #999;
+}
+
+#page_title {
+	margin-bottom: 5px;
+}
+
+#edit {
+	display: none;
+}
+
+#footer {
+  width:100%;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+#footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+#page_content a {
+	text-decoration: none !important;
+}
+
+#page_content a:after {
+	text-decoration: none !important;
+	content: "["attr(href)"]";
+	color: #000;
+
+}
+
+h1 {
+	font-size: 1.6em;
+}
+
+h2 {
+	font-size: 1.4em;
+	margin: 15px 0 5px 0;
+}
+
+h3 {
+	font-size: 1.3em;
+	margin: 15px 0 5px 0;
+}
+
+h4 {
+	font-size: 1.2em;
+	margin: 10px 0 5px 0;
+}
+
+h5 {
+	font-size: 1.1em;
+	margin: 10px 0 5px 0;
+}
+
+h6 {
+	font-size: 1.0em;
+	margin: 5px 0 5px 0;
+}
+
+p {
+	margin: 0 0 5px 0;
+}
+
+blockquote {
+	border-left: 4px solid #bbb;
+	margin-left:0;
+	padding-left: 10px;
+}
+
+code {
+	font-family: Andale Mono, Courier New, monospace;
+	/*font-size: 1.1em;*/
+	background: #eee;
+}
