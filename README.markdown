@@ -26,7 +26,6 @@ Since TiddlyIO is not required when accessing MokuWiki on the web, even browser 
     Plugins:
   * getUrlParam ([Homepage](http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/))
   * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
-* Showdown ([Original Homepage](http://www.attacklab.net/) (currently offline))
 * TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
 
 ## License
