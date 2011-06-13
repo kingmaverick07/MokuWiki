@@ -1,4 +1,4 @@
-# MokuWiki Licensing
+= MokuWiki Licensing
 MokuWiki is licensed under the MIT license
 
 > Copyright (c) 2011 Severin Schols
@@ -21,12 +21,10 @@ MokuWiki is licensed under the MIT license
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 > THE SOFTWARE.
 
-## Parts take from other projects
+== Parts take from other projects
 MokuWiki uses parts of the following libraries/projects. See their sites for license information
 
-* jQuery v1.5.1 ([Homepage](http://jquery.com/))<br />
-  Plugins:
-  * getUrlParam ([Homepage](http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/))
-  * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
-* Showdown ([Original Homepage](http://www.attacklab.net/) (currently offline))
-* TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
+* jQuery v1.5.1 ([[http://jquery.com/|Homepage]])\\Plugins:
+** getUrlParam ([[http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/|Homepage]])
+** TextArea Resizer ([[http://plugins.jquery.com/project/TextAreaResizer|Homepage]])
+* TiddlyIO ([[https://github.com/tiefpunkt/tiddlyIO|GitHub Repository]])

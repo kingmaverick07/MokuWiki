@@ -1,5 +1,5 @@
 /*
-*  MokuWiki v0.1
+*  MokuWiki v0.2
 *
 *   Copyright (c) 2011 Severin Schols
 *    Licensed under the MIT license. See LICENSE.markdown for details.
@@ -22,8 +22,16 @@ function Page(name) {
   this.title = name;
   this.hasOwnTitle = false;
   //this.tiddlyIO = new TiddlyIO();
-  this.converter = new Showdown.converter();
+  //this.converter = new Showdown.converter();
   this.text = '';
+  
+  this.creole = new Parse.Simple.Creole( {
+        forIE: document.all,
+        interwiki: {
+            Wikipedia: 'http://web.archive.org/web/20091116200910/http://en.wikipedia.org//wiki/'
+        },
+        linkFormat: '?page='
+    } );
   
   this.path = "data/" + this.name + ".txt";
 }
@@ -74,8 +82,8 @@ Page.prototype.save = function () {
 Page.prototype.getHTML = function () {
   var output;
   if (this.text != null) {
-    var text = this.text.replace(/^#[^#\n]+/, ""); //Remove first headline from text
-    output = this.converter.makeHtml(text);
+    var text = this.text.replace(/^=[^=\n]+/, ""); //Remove first headline from text
+    output = this.creole.parse(text);
   } else {
     output = "Error: Page is empty!<br/>Maybe you didn't create it yet?";
   }
@@ -95,7 +103,7 @@ Page.prototype.setText = function (text) {
   this.text = text;
   
   // Find page title
-  var headlinePattern = /^#([^#\n]+)/;
+  var headlinePattern = /^=([^=\n]+)/;
   var match = headlinePattern.exec(this.text);
   if (match === null) {
     this.title = this.name
