@@ -2,12 +2,10 @@
 Features and other stuff that needs to be worked on in MokuWiki.
 
 == Shortterm
-* Format lists
 * Preview
 
 == Longterm
 * List of all pages
-* Switch to [[http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html|Creole]] as wiki markup
 * Search
 * Revision History
 * Categories
