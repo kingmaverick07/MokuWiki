@@ -1,0 +1,6 @@
+= Creole
+The markup language used in MokuWiki is called Creole. Creole is intended to be a wiki markup language used by many different wiki systems.
+== Links
+* [[http://www.wikicreole.org/wiki/Creole1.0|Creole 1.0 Standard]]
+* [[http://www.wikicreole.org/wiki/CheatSheet|Creole Cheat Sheet]]
+

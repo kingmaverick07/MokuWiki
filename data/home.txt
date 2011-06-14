@@ -6,6 +6,7 @@ MokuWiki is a wiki based on javascript and able to run without any kind of webse
 * Pages are stored in files. One page, one file.
 ** You should be able to edit those files without opening the wiki, but do the editing in your favorite text editor
 * Online Publishing (see below)
+* Markup Language: [[Creole]]
 
 === Online publishing
 It is possible to publish a MokuWiki on the web. Just copy all the files to your webserver. No need for configuration, databases etc. Editing pages will not work, but people will be able to browse the wiki, even with browers that do not support editing the wiki (see Compatibility).
@@ -22,6 +23,7 @@ Since TiddlyIO is not required when accessing MokuWiki on the web, even browser 
 ** getUrlParam ([[http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/|Homepage]])
 ** TextArea Resizer ([[http://plugins.jquery.com/project/TextAreaResizer|Homepage]])
 * TiddlyIO ([[https://github.com/tiefpunkt/tiddlyIO|GitHub Repository]])
+* JavaScript Creole 1.0 Wiki Markup Parser ([[http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html|Homepage]])
 
 == See also
 [[License]] | [[ToDo]]

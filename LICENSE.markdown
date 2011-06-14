@@ -29,3 +29,4 @@ MokuWiki uses parts of the following libraries/projects. See their sites for lic
   * getUrlParam ([Homepage](http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/))
   * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
 * TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
+* JavaScript Creole 1.0 Wiki Markup Parser ([Homepage](http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html))

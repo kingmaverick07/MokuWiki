@@ -8,8 +8,8 @@ You might think: "Hey, there is such a thing already. It's called TiddlyWiki". W
 * Javascript + HTML + CSS
 * Pages are stored in files. One page, one file.
   * You should be able to edit those files without opening the wiki, but do the editing in your favorite text editor
-* Markup-Language: Markdown
-* `$imagination`
+* Online Publishing (see below)
+* Markup Language: Creole
 
 ### Online publishing
 It is possible to publish a MokuWiki on the web. Just copy all the files to your webserver. No need for configuration, databases etc. Editing pages will not work, but people will be able to browse the wiki, even with browers that do not support editing the wiki (see Compatibility).
@@ -27,6 +27,7 @@ Since TiddlyIO is not required when accessing MokuWiki on the web, even browser 
   * getUrlParam ([Homepage](http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/))
   * TextArea Resizer ([Homepage](http://plugins.jquery.com/project/TextAreaResizer))
 * TiddlyIO ([GitHub Repository](https://github.com/tiefpunkt/tiddlyIO))
+* JavaScript Creole 1.0 Wiki Markup Parser ([Homepage](http://www.ivan.fomichev.name/2008/04/javascript-creole-10-wiki-markup-parser.html))
 
 ## License
 MokuWiki is released under the MIT license. See LICENSE.markdown for details.
