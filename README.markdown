@@ -17,7 +17,7 @@ It is possible to publish a MokuWiki on the web. Just copy all the files to your
 You should be able to find a demo at [tiefpunkt.github.com/MokuWiki](http://tiefpunkt.github.com/MokuWiki).
 
 ### Compatibility
-So far, MokuWiki has been successfully tested in Firefox 3.6, Firefox 4.0 and IE8 on a Windows 7 machine, as well as Firefox 3.6 on a Ubuntu machine. Tests in Opera and Chrome on the same Win7 box have not been successful. This is largely due to missing support in the TiddlyIO library, which should come eventually.
+So far, MokuWiki has been successfully tested in Firefox 3.6, Firefox 4.0 and IE8 on a Windows 7 machine, as well as Firefox 3.6 on a Ubuntu machine. Tests in Opera and Chrome on the same Win7 box have not been successful. This is largely due to missing support in the TiddlyIO library.
 
 Since TiddlyIO is not required when accessing MokuWiki on the web, even browser that don't support access to the wiki locally might be supported. This is the case for Opera and Chrome on Win7.
 
